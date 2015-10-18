@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import com.example.shanbeidemo.R;
 import com.example.shanbeidemo.adapter.WordAdapter;
 import com.example.shanbeidemo.bean.Lesson;
+import com.example.shanbeidemo.ui.NewWordListView;
 import com.example.shanbeidemo.ui.fragment.SideBar;
 import com.example.shanbeidemo.ui.fragment.SideBar.OnTouchingLetterChangedListener;
 import com.example.shanbeidemo.utils.ReadDataFromFile;
@@ -40,7 +41,7 @@ public class ArticleDetailActivity extends Activity {
 	TextView tv_article;
 	TextView translation;
 	TextView lessonid;
-	ListView word_lv;
+	NewWordListView word_lv;
 	Lesson bean;
 	int level = 0;
 	SideBar sb_level;
@@ -70,7 +71,7 @@ public class ArticleDetailActivity extends Activity {
 		WordAdapter adapter = new WordAdapter(ArticleDetailActivity.this,
 				bean.getWordslist());
 		word_lv.setAdapter(adapter);
-		UIUtils.setListViewHeight(word_lv);
+		// UIUtils.setListViewHeight(word_lv);
 		btn_back.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -86,8 +87,10 @@ public class ArticleDetailActivity extends Activity {
 					boolean isChecked) {
 				// TODO Auto-generated method stub
 				if (isChecked) {
+					sb_level.setVisibility(View.VISIBLE);
 					showHight = true;
 				} else {
+					sb_level.setVisibility(View.GONE);
 					showHight = false;
 					tv_article.setText(Html.fromHtml(bean.getArticles()));
 				}
@@ -127,7 +130,7 @@ public class ArticleDetailActivity extends Activity {
 		tv_article = (TextView) findViewById(R.id.tv_article);
 		translation = (TextView) findViewById(R.id.tv_trn);
 		lessonid = (TextView) findViewById(R.id.lesson_id);
-		word_lv = (ListView) findViewById(R.id.lv_wordlist);
+		word_lv = (NewWordListView) findViewById(R.id.lv_wordlist);
 		btn_back = (Button) findViewById(R.id.btn_back);
 		btn_level = (ToggleButton) findViewById(R.id.btn_level);
 

@@ -1,8 +1,7 @@
 package com.example.shanbeidemo.adapter;
 
 import java.util.ArrayList;
-
-import android.R.animator;
+import com.example.shanbeidemo.R;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,13 +43,13 @@ public class WordAdapter extends BaseAdapter {
 		// TODO Auto-generated method stub
 		View view;
 		if (convertView == null) {
-			view = LayoutInflater.from(context).inflate(
-					android.R.layout.simple_list_item_1, null);
+			view = LayoutInflater.from(context).inflate(R.layout.list_item,
+					null);
 		} else {
 			view = convertView;
 
 		}
-		TextView tv = (TextView) view.findViewById(android.R.id.text1);
+		TextView tv = (TextView) view.findViewById(R.id.text1);
 		tv.setText(data.get(position).toString());
 		return view;
 	}

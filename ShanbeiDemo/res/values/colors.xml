@@ -2,9 +2,11 @@
 <resources>
 
     <color name="title_bar">#000000</color>
-   <color name="section_border">#D0D0D0</color>
+    <color name="section_border">#D0D0D0</color>
     <color name="section_start">#F9F9F9</color>
     <color name="section_end">#E0E0E0</color>
     <color name="section_subtitle">#555555</color>
+    <color name="bg">#f9f9f9</color>
+    <color name="white">#ffffff</color>
 
 </resources>

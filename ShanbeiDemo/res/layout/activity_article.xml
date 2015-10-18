@@ -51,17 +51,22 @@
         android:layout_height="20dp"
         android:layout_below="@id/bar"
         android:layout_gravity="top|center"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:visibility="gone" />
 
     <ScrollView
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/sidrbar" >
+        android:layout_below="@id/sidrbar"
+        android:fadeScrollbars="true"
+        android:padding="10dp" >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:orientation="vertical" >
 
             <TextView
@@ -69,8 +74,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:text="Title" />
+                android:layout_marginBottom="10dp"
+                android:background="@color/title_bar"
+                android:padding="5dp"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -81,15 +90,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:text="Article" />
+                    android:background="@color/white"
+                    android:padding="5dp"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/dialog"
                     android:layout_width="80.0dip"
                     android:layout_height="80.0dip"
                     android:layout_gravity="center"
-                    android:background="@drawable/show_head_toast_bg"
+                    android:background="#c9e3fd"
                     android:gravity="center"
                     android:textColor="#ffffffff"
                     android:textSize="30.0dip"
@@ -99,34 +109,43 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/title_bar"
+                android:padding="5dp"
                 android:text="生词和短语"
-                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <ListView
+            <com.example.shanbeidemo.ui.NewWordListView
                 android:id="@+id/lv_wordlist"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:divider="#808088"
-                android:dividerHeight="1dp" >
-            </ListView>
+                android:layout_height="wrap_content"
+                android:divider="@color/bg"
+                android:dividerHeight="2dp" >
+            </com.example.shanbeidemo.ui.NewWordListView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/title_bar"
+                android:padding="5dp"
                 android:text="参考译文"
-                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_trn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Translation" />
+                android:layout_gravity="center"
+                android:background="@color/white"
+                android:padding="5dp"
+                android:textSize="16sp" />
         </LinearLayout>
     </ScrollView>
 

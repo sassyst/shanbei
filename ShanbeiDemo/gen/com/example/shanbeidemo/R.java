@@ -18,11 +18,13 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
+        public static final int bg=0x7f040005;
         public static final int section_border=0x7f040001;
         public static final int section_end=0x7f040003;
         public static final int section_start=0x7f040002;
         public static final int section_subtitle=0x7f040004;
         public static final int title_bar=0x7f040000;
+        public static final int white=0x7f040006;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -37,14 +39,12 @@ public final class R {
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
-        public static final int section_background=0x7f020001;
-        public static final int section_selected_background=0x7f020002;
-        public static final int section_selector=0x7f020003;
-        public static final int show_head_toast_bg=0x7f020004;
-        public static final int sidebar_background=0x7f020005;
+        public static final int show_head_toast_bg=0x7f020001;
+        public static final int sidebar_background=0x7f020002;
+        public static final int text_bg=0x7f020003;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a000d;
+        public static final int action_settings=0x7f0a000e;
         public static final int bar=0x7f0a0000;
         public static final int btn_back=0x7f0a0001;
         public static final int btn_level=0x7f0a0003;
@@ -54,6 +54,7 @@ public final class R {
         public static final int lv_lesson=0x7f0a000b;
         public static final int lv_wordlist=0x7f0a0009;
         public static final int sidrbar=0x7f0a0004;
+        public static final int text1=0x7f0a000d;
         public static final int tv_article=0x7f0a0007;
         public static final int tv_item=0x7f0a000c;
         public static final int tv_title=0x7f0a0006;
@@ -63,6 +64,7 @@ public final class R {
         public static final int activity_article=0x7f030000;
         public static final int activity_main=0x7f030001;
         public static final int expandable_list_item=0x7f030002;
+        public static final int list_item=0x7f030003;
     }
     public static final class menu {
         public static final int main=0x7f090000;
