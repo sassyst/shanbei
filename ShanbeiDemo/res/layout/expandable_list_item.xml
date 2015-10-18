@@ -9,9 +9,10 @@
         android:id="@+id/tv_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="@color/green"
         android:gravity="center_horizontal"
         android:padding="10dp"
+        android:textColor="#fff"
         android:textSize="24sp" />
 
 </LinearLayout>

@@ -19,6 +19,7 @@ public final class R {
     }
     public static final class color {
         public static final int bg=0x7f040005;
+        public static final int green=0x7f040007;
         public static final int section_border=0x7f040001;
         public static final int section_end=0x7f040003;
         public static final int section_start=0x7f040002;
@@ -38,27 +39,29 @@ public final class R {
         public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
-        public static final int show_head_toast_bg=0x7f020001;
-        public static final int sidebar_background=0x7f020002;
-        public static final int text_bg=0x7f020003;
+        public static final int bg_btn=0x7f020000;
+        public static final int ic_launcher=0x7f020001;
+        public static final int show_head_toast_bg=0x7f020002;
+        public static final int sidebar_background=0x7f020003;
+        public static final int text_bg=0x7f020004;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a000e;
+        public static final int action_settings=0x7f0a000f;
         public static final int bar=0x7f0a0000;
         public static final int btn_back=0x7f0a0001;
         public static final int btn_level=0x7f0a0003;
-        public static final int content=0x7f0a0005;
-        public static final int dialog=0x7f0a0008;
+        public static final int content=0x7f0a0006;
+        public static final int dialog=0x7f0a0009;
         public static final int lesson_id=0x7f0a0002;
-        public static final int lv_lesson=0x7f0a000b;
-        public static final int lv_wordlist=0x7f0a0009;
-        public static final int sidrbar=0x7f0a0004;
-        public static final int text1=0x7f0a000d;
-        public static final int tv_article=0x7f0a0007;
-        public static final int tv_item=0x7f0a000c;
-        public static final int tv_title=0x7f0a0006;
-        public static final int tv_trn=0x7f0a000a;
+        public static final int line=0x7f0a0004;
+        public static final int lv_lesson=0x7f0a000c;
+        public static final int lv_wordlist=0x7f0a000a;
+        public static final int sidrbar=0x7f0a0005;
+        public static final int text1=0x7f0a000e;
+        public static final int tv_article=0x7f0a0008;
+        public static final int tv_item=0x7f0a000d;
+        public static final int tv_title=0x7f0a0007;
+        public static final int tv_trn=0x7f0a000b;
     }
     public static final class layout {
         public static final int activity_article=0x7f030000;

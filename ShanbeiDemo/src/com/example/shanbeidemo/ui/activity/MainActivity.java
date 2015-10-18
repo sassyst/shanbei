@@ -11,6 +11,7 @@ import com.example.shanbeidemo.bean.Lesson;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -54,9 +55,9 @@ public class MainActivity extends Activity {
 				Intent intent = new Intent(MainActivity.this,
 						ArticleDetailActivity.class);
 				intent.putExtra("file_name", "json" + id);
+				Log.i("debug", "json" + id);
 				startActivity(intent);
-				Toast.makeText(MainActivity.this, "Lesson " + id,
-						Toast.LENGTH_LONG).show();
+
 				return false;
 			}
 		});

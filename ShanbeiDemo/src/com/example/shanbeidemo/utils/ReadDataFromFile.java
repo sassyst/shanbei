@@ -33,8 +33,8 @@ public class ReadDataFromFile {
 
 	public ArrayList<Word> loadAllWords() {
 
-		Pattern word_exp = Pattern.compile("[a-zA-Z]+");// ¶¨ÒåÕıÔò±í´ïÊ½Æ¥Åäµ¥´Ê
-		Pattern number_exp = Pattern.compile("([0-9])$");// ¶¨ÒåÕıÔò±í´ïÊ½Æ¥Åäshuzi
+		Pattern word_exp = Pattern.compile("[a-zA-Z]+");// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½Æ¥ï¿½äµ¥ï¿½ï¿½
+		Pattern number_exp = Pattern.compile("([0-9])$");// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½Æ¥ï¿½ï¿½shuzi
 		// Map<Integer, List<String>> allWords;
 		try {
 
@@ -49,7 +49,7 @@ public class ReadDataFromFile {
 				StringBuffer sbuf = new StringBuffer();
 				Matcher matcher_word = word_exp.matcher(strLine);
 				Matcher matcher_num = number_exp.matcher(strLine);
-				while (matcher_word.find()) {// ÊÇ·ñÆ¥Åäµ¥´Ê
+				while (matcher_word.find()) {// ï¿½Ç·ï¿½Æ¥ï¿½äµ¥ï¿½ï¿½
 					String word = matcher_word.group();
 					if (blank == 0) {
 						sbuf.append(word);
@@ -121,6 +121,7 @@ public class ReadDataFromFile {
 			bufReader.close();
 		} catch (JSONException e) {
 			e.printStackTrace();
+			Log.i("debug", "Json æ ¼å¼é”™è¯¯ï¼");
 		} catch (IOException e) {
 			// TODO: handle exception
 			e.printStackTrace();

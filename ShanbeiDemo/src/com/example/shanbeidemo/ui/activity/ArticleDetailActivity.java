@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import org.apache.http.entity.FileEntity;
+
 import com.example.shanbeidemo.R;
 import com.example.shanbeidemo.adapter.WordAdapter;
 import com.example.shanbeidemo.bean.Lesson;
@@ -12,10 +14,8 @@ import com.example.shanbeidemo.ui.fragment.SideBar;
 import com.example.shanbeidemo.ui.fragment.SideBar.OnTouchingLetterChangedListener;
 import com.example.shanbeidemo.utils.ReadDataFromFile;
 import com.example.shanbeidemo.utils.TextUtilTools;
-import com.example.shanbeidemo.utils.UIUtils;
-
 import android.app.Activity;
-import android.app.Dialog;
+import android.content.res.Resources.NotFoundException;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
@@ -25,16 +25,14 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
-import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 public class ArticleDetailActivity extends Activity {
 	String Result = "";
 	int lesson_id;
 	String lesson_title;
-	String str_article;
-	String str_translation;
 	String file_name;
 	ReadDataFromFile read = null;
 	TextView tv_title;
@@ -49,6 +47,8 @@ public class ArticleDetailActivity extends Activity {
 	Button btn_back;
 	ToggleButton btn_level;
 	boolean showHight = false;
+	String article;
+	String str_translation;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -64,14 +64,16 @@ public class ArticleDetailActivity extends Activity {
 
 	private void setView() {
 		// TODO Auto-generated method stub
-		tv_title.setText(bean.getTitle());
-		tv_article.setText(Html.fromHtml(bean.getArticles()));
-		translation.setText(bean.getTranslation());
-		lessonid.setText("Lesson " + bean.getId());
-		WordAdapter adapter = new WordAdapter(ArticleDetailActivity.this,
-				bean.getWordslist());
-		word_lv.setAdapter(adapter);
-		// UIUtils.setListViewHeight(word_lv);
+		if (bean != null) {
+			tv_title.setText(bean.getTitle());
+			tv_article.setText(article);
+			translation.setText(str_translation);
+			lessonid.setText("Lesson " + bean.getId());
+			WordAdapter adapter = new WordAdapter(ArticleDetailActivity.this,
+					bean.getWordslist());
+			word_lv.setAdapter(adapter);
+			// UIUtils.setListViewHeight(word_lv);
+		}
 		btn_back.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -92,7 +94,7 @@ public class ArticleDetailActivity extends Activity {
 				} else {
 					sb_level.setVisibility(View.GONE);
 					showHight = false;
-					tv_article.setText(Html.fromHtml(bean.getArticles()));
+					tv_article.setText(article);
 				}
 			}
 		});
@@ -116,9 +118,14 @@ public class ArticleDetailActivity extends Activity {
 					getResources().getAssets().open(file_name));
 			read = new ReadDataFromFile(inputReader);
 			bean = read.getLessonData();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			article = bean.getArticles().replaceAll("\\n", "\n")
+					.replaceAll("\\r", "\r");
+			str_translation = bean.getTranslation().replaceAll("\\n", "\n")
+					.replaceAll("\\r", "\r");
+			Log.i("debug", article);
+		} catch (Exception e) {
+			Toast.makeText(ArticleDetailActivity.this, "Not found File",
+					Toast.LENGTH_SHORT).show();
 		}
 
 	}
@@ -149,8 +156,8 @@ public class ArticleDetailActivity extends Activity {
 			e.printStackTrace();
 		}
 		// TODO Auto-generated method stub
-		tv_article.setText(Html.fromHtml(TextUtilTools.highlight(
-				bean.getArticles(), levelwordlist)));
+		tv_article.setText(Html.fromHtml(TextUtilTools
+				.highlight(article, levelwordlist).replaceAll("\n", "<br>")
+				.replaceAll("\r", " &nbsp")));
 	}
-
 }
