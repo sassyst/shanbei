@@ -46,7 +46,7 @@ public class LessonsAdapter extends BaseExpandableListAdapter {
 		if (convertView == null) {
 			LayoutInflater inflater = (LayoutInflater) context
 					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			convertView = inflater.inflate(R.layout.expandable_list_item, null);
+			convertView = inflater.inflate(R.layout.listitem_main, null);
 		}
 		TextView tv = (TextView) convertView.findViewById(R.id.tv_item);
 		tv.setText(lessonnum);
@@ -87,7 +87,7 @@ public class LessonsAdapter extends BaseExpandableListAdapter {
 		if (convertView == null) {
 			LayoutInflater inflater = (LayoutInflater) context
 					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			convertView = inflater.inflate(R.layout.expandable_list_item, null);
+			convertView = inflater.inflate(R.layout.listitem_main, null);
 		}
 		TextView tv = (TextView) convertView.findViewById(R.id.tv_item);
 		tv.setText(unit.get(groupPosition));

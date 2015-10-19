@@ -43,7 +43,7 @@ public class WordAdapter extends BaseAdapter {
 		// TODO Auto-generated method stub
 		View view;
 		if (convertView == null) {
-			view = LayoutInflater.from(context).inflate(R.layout.list_item,
+			view = LayoutInflater.from(context).inflate(R.layout.listitem_words,
 					null);
 		} else {
 			view = convertView;

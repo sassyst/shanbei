@@ -12,57 +12,48 @@
 
         <Button
             android:id="@+id/btn_back"
+            style="@style/btn_bar_normal"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
-            android:layout_marginBottom="3dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="3dp"
-            android:background="@color/green"
-            android:gravity="center"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:text="返回"
-            android:textColor="#fff"
-            android:textSize="14sp" />
+            android:layout_marginBottom="@dimen/margin_small"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="返回" />
 
         <TextView
             android:id="@+id/lesson_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:textColor="#fff" />
+            android:textColor="@color/white" />
 
         <ToggleButton
             android:id="@+id/btn_level"
+            style="@style/btn_bar_normal"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
-            android:layout_marginBottom="3dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="3dp"
-            android:background="@color/green"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:layout_marginRight="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_small"
             android:checked="false"
-            android:gravity="center"
-            android:textColor="#fff"
-            android:textOff="开启高亮"
-            android:textOn="关闭高亮"
-            android:textSize="14sp" />
+            android:textOff="@string/hightlight_on"
+            android:textOn="@string/hightlight_off" />
     </RelativeLayout>
 
     <View
-        android:id="@+id/line"
+        android:id="@+id/dividerline_horizontal"
         android:layout_width="match_parent"
-        android:layout_height="2dp"
+        android:layout_height="1dp"
         android:layout_below="@id/bar"
-        android:background="#68c39f" />
+        android:background="@color/light_green" />
 
-    <com.example.shanbeidemo.ui.fragment.SideBar
+    <com.example.shanbeidemo.ui.SideBar
         android:id="@+id/sidrbar"
         android:layout_width="match_parent"
         android:layout_height="20dp"
-        android:layout_below="@id/line"
-        android:layout_gravity="top|center"
+        android:layout_below="@id/dividerline_horizontal"
         android:visibility="gone" />
 
     <ScrollView
@@ -71,10 +62,9 @@
         android:layout_height="match_parent"
         android:layout_below="@id/sidrbar"
         android:fadeScrollbars="true"
-        android:paddingBottom="10dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:scrollbarSize="12dip" >
+        android:paddingBottom="@dimen/padding_large"
+        android:paddingLeft="@dimen/padding_large"
+        android:paddingRight="@dimen/padding_large" >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -85,17 +75,12 @@
 
             <TextView
                 android:id="@+id/tv_title"
+                style="@style/tv_article_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="30dp"
-                android:layout_marginTop="30dp"
-                android:background="@color/green"
-                android:fontFamily="sans-serif-thin"
-                android:padding="5dp"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:layout_marginTop="30dp" />
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -103,13 +88,9 @@
 
                 <TextView
                     android:id="@+id/tv_article"
+                    style="@style/tv_article"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="@drawable/bg_btn"
-                    android:fontFamily="sans-serif-thin"
-                    android:padding="10dp"
-                    android:textSize="16sp" />
+                    android:layout_height="wrap_content" />
 
                 <TextView
                     android:id="@+id/dialog"
@@ -124,16 +105,12 @@
             </FrameLayout>
 
             <TextView
+                style="@style/tv_article_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/green"
-                android:padding="5dp"
-                android:text="生词和短语"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"
+                android:text="生词和短语" />
 
             <com.example.shanbeidemo.ui.NewWordListView
                 android:id="@+id/lv_wordlist"
@@ -144,25 +121,18 @@
             </com.example.shanbeidemo.ui.NewWordListView>
 
             <TextView
+                style="@style/tv_article_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/green"
-                android:padding="5dp"
-                android:text="参考译文"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:layout_marginBottom="@dimen/margin_large"
+                android:layout_marginTop="@dimen/margin_large"
+                android:text="参考译文" />
 
             <TextView
                 android:id="@+id/tv_trn"
+                style="@style/tv_article"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/bg_btn"
-                android:padding="5dp"
-                android:textSize="16sp" />
+                android:layout_height="wrap_content" />
         </LinearLayout>
     </ScrollView>
 
